@@ -34,37 +34,37 @@ The general Git workflow is as follows:
 
 Once we have navigated to where we wish to work, we need to initialise an empty Git repository in the current directory.
 
-```Git
+```Bash
 git init
 ```
 
 During a project we may wish to check on the status of the working directory, including any files which are currently untracked.
 
-```Git
+```Bash
 git status
 ```
 
 To add files to the staging area, i.e. to track files, we can use the following syntax.
 
-```Git
+```Bash
 git add filename
 ```
 
 If a file is modified in the working directory, then it does not affect the same file (with possibly different contents) in the staging area. Often, we will want to see the difference between the file contents before adding it to the staging area.
 
-```Git
+```Bash
 git diff filename
 ```
 
 Finally, we can permanently store the changes in the staging area to the repository. Typically, we use the `-m` flag to attach messages to the commit explaining what the commit does. The standard convention for commit messages is that they must be in quotation marks; be written in the present tense; and be 50 characters or less.
 
-```Git
+```Bash
 git commit -m "Implement first part of project"
 ```
 
 We can view earlier versions of a project using the chronologically stored history of commits in a repository, including a timestamp, the author, the commit hash, and the commit message.
 
-```Git
+```Bash
 git log
 ```
 
@@ -76,7 +76,7 @@ Sometimes we will want to revert changes that have been made in a project.
 
 It is often useful to know the commit that the project is currently on (often this will be the commit that has most recently been made). This is called the `HEAD` commit. We can use the following command to output the log and the file changes for the `HEAD` commit.
 
-```Git
+```Bash
 git show HEAD
 ```
 
@@ -86,15 +86,15 @@ It may be the case that branches, files, or even commits, share the same names. 
 
 Wherever appropriate, if a command allows for a filename, branch name, or commit, as argument, it should be assumed that `--` can be utilised to avoid issues in coinciding names. Note that names of branches, files, or commits can be blank to indicate that we do not want to have them as an argument. Hence, all of the following syntaxes are valid.
 
-```Git
+```Bash
 git command branch_name -- filename
 ```
 
-```Git
+```Bash
 git command -- filename
 ```
 
-```Git
+```Bash
 git command branch_name --
 ```
 
@@ -102,13 +102,13 @@ git command branch_name --
 
 We know already know that we can use `git diff` to see changes made to files in the working directory before adding them to the staging area. We may then wish to discard those changes.
 
-```Git
+```Bash
 git checkout filename
 ```
 
 Sometimes there are conflicts which need to be resolved (such as unmerged changes), which will result in the above syntax not working. In this case we will need to specify the position on the current branch (usually `HEAD`, or `HEAD~X` for a commit which is X commits before the `HEAD` commit).
 
-```Git
+```Bash
 git checkout HEAD filename
 ```
 
@@ -116,7 +116,7 @@ git checkout HEAD filename
 
 If we've added a file to the staging area by mistake and want to unstage back to the working directory, without discarding changes, then we can use the following syntax.
 
-```Git
+```Bash
 git reset HEAD filename
 ```
 
@@ -124,7 +124,7 @@ git reset HEAD filename
 
 We've already seen that `git log` outputs commit information, including the commit hash. We can use the first seven characters of the hash to revert to a previous commit.
 
-```Git
+```Bash
 git reset commit_hash
 ```
 
@@ -134,13 +134,13 @@ Note that running `git log` again will reveal that the `HEAD` commit has been re
 
 If we wish to undo a recent revert, then we can use the following command.
 
-```Git
+```Bash
 git reset HEAD@{1}
 ```
 
 This works because Git keeps a log of all reference updates, viewable using the `git reflog` command which tracks the `HEAD` changes and how many positions ago. In general, we may revert to X positions ago.
 
-```Git
+```Bash
 git reset HEAD@{X}
 ```
 
@@ -150,7 +150,7 @@ Git allows for the creation of *branches* to experiment with multiple versions o
 
 To see our branches, we can use the following command.
 
-```Git
+```Bash
 git branch
 ```
 
@@ -160,17 +160,17 @@ The `*` indicates the branch that we are on.
 
 We can create a new branch using the following syntax.
 
-```Git
+```Bash
 git branch branch_name
 ```
 
 We can also switch branches using either of the following syntaxes (the latter was introduced in Git 2.23, Q3 2019, to avoid confusion).
 
-```Git
+```Bash
 git checkout branch_name
 ```
 
-```Git
+```Bash
 git switch branch_name
 ```
 
@@ -182,7 +182,7 @@ Suppose that we've created a new branch called `new_branch`, have made changes t
 
 If the `master` branch has not been altered, then we can merge the `new_branch` branch easily. First, we should ensure that we are on the `master` branch - in general, we should be on the branch that we wish to merge other branches with. Then we can use the following syntax.
 
-```Git
+```Bash
 git merge new_branch
 ```
 
@@ -195,7 +195,7 @@ In this scenario, Git will leave conflict markers in the conflicting file(s) to 
 ### Deleting Branches
 Once branches have been merged with the `master` branch, they are typically no longer needed. The following syntax can be used to delete such branches.
 
-```Git
+```Bash
 git branch -d branch_name
 ```
 
@@ -210,13 +210,13 @@ All of this can be achieved via *remotes* - a shared Git repository for multiple
 
 Before we can begin, we need to create a local copy of the remote.
 
-```Git
+```Bash
 git clone remote_location clone_name
 ```
 
 After the remote has been cloned, Git gives the remote address the name origin for convenience, although this can be changed. The following command can be used to see a list of a Git project's remotes.
 
-```Git
+```Bash
 git remote -v
 ```
 
@@ -236,18 +236,18 @@ Note that steps 1 and 4 safeguard against merge conflicts.
 
 Any time which elapses from the initial cloning period introduces the possibility of changes being introduced to the remote. Instead of cloning the repository again, we can instead bring those changes onto a local *remote branch*.
 
-```Git
+```Bash
 git fetch
 ```
 
 Once we have fetched any changes, we need to merge the remote branch, typically named `origin/master`, to our local `master` branch.
 
-```Git
+```Bash
 git merge origin/master
 ```
 
 Once our work is ready to be shared with the other collaborators, we can push our local branch up to the remote, `origin`. From there, people can review the branch and merge the work into the `master` branch, making it a part of the definitive project version.
 
-```Git
+```Bash
 git push origin branch_name
 ```
