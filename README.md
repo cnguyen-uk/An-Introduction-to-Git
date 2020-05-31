@@ -10,6 +10,7 @@ Throughout, note that file or directory arguments for commands can also be repla
 ## Table of Contents
 
 - [Basic Git Workflow](#basic-git-workflow)
+- [Getting Started](#getting-started)
 - [Backtracking in Git](#backtracking-in-git)
   * [The `HEAD` Commit](#the-head-commit)
   * [Double Dashes](#double-dashes)
@@ -32,7 +33,9 @@ The general Git workflow is as follows:
 2. Staging Area: This acts as a layer between the working directory and the repository. Using `git add` we can add changes from the working directory to the staging area, where files are ready to be committed to the repository.
 3. Repository: This is where different versions of the project are saved.	Using `git commit` saves changes in the staging area to the repository.
 
-Once we have navigated to where we wish to work, we need to initialise an empty Git repository in the current directory.
+## Getting Started
+
+Once we have navigated to where we wish to work (using the commmand line), we need to initialise an empty Git repository in the current directory.
 
 ```Bash
 git init
