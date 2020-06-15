@@ -27,6 +27,7 @@ Throughout, note that file or directory arguments for commands can also be repla
   * [`fetch` and `push`](#fetch-and-push)
 
 ## Basic Git Workflow
+
 The general Git workflow is as follows:
 
 1. Working Directory: This is the workspace for making changes to files, such as additions, deletions and modifications. Using `git init` can create a repository in this workspace.
