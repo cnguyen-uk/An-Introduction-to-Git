@@ -48,7 +48,7 @@ During a project we may wish to check on the status of the working directory, in
 git status
 ```
 
-To add files to the staging area, i.e. to track files, we can use the following syntax.
+To add files to the staging area, i.e. to track files, we can use the following syntax:
 
 ```Bash
 git add filename
@@ -78,7 +78,7 @@ Sometimes we will want to revert changes that have been made in a project.
 
 ### The `HEAD` Commit
 
-It is often useful to know the commit that the project is currently on (often this will be the commit that has most recently been made). This is called the `HEAD` commit. We can use the following command to output the log and the file changes for the `HEAD` commit.
+It is often useful to know the commit that the project is currently on (often this will be the commit that has most recently been made). This is called the `HEAD` commit. We can use the following command to output the log and the file changes for the `HEAD` commit:
 
 ```Bash
 git show HEAD
@@ -88,7 +88,7 @@ git show HEAD
 
 It may be the case that branches, files, or even commits, share the same names. To provide clear disambiguation, Git uses `--`. In particular, the argument before the `--` must be a branch name or commit name, and the argument after the `--` must be a filename.
 
-Wherever appropriate, if a command allows for a filename, branch name, or commit, as argument, it should be assumed that `--` can be utilised to avoid issues in coinciding names. Note that names of branches, files, or commits can be blank to indicate that we do not want to have them as an argument. Hence, all of the following syntaxes are valid.
+Wherever appropriate, if a command allows for a filename, branch name, or commit, as argument, it should be assumed that `--` can be utilised to avoid issues in coinciding names. Note that names of branches, files, or commits can be blank to indicate that we do not want to have them as an argument. Hence, all of the following syntaxes are valid:
 
 ```Bash
 git command branch_name -- filename
@@ -118,7 +118,7 @@ git checkout HEAD filename
 
 ### Unstaging Files
 
-If we've added a file to the staging area by mistake and want to unstage back to the working directory, without discarding changes, then we can use the following syntax.
+If we've added a file to the staging area by mistake and want to unstage back to the working directory, without discarding changes, then we can use the following syntax:
 
 ```Bash
 git reset HEAD filename
@@ -136,7 +136,7 @@ Note that running `git log` again will reveal that the `HEAD` commit has been re
 
 ### Reverting Commit Reverts
 
-If we wish to undo a recent revert, then we can use the following command.
+If we wish to undo a recent revert, then we can use the following command:
 
 ```Bash
 git reset HEAD@{1}
@@ -152,7 +152,7 @@ git reset HEAD@{X}
 
 Git allows for the creation of *branches* to experiment with multiple versions of a project. The default branch is usually called `master`. The other branches will not affect the `master` branch until they are merged. Branches consist of commits and can be created from any commit, either from the `master` branch, or any other branch.
 
-To see our branches, we can use the following command.
+To see our branches, we can use the following command:
 
 ```Bash
 git branch
@@ -162,13 +162,13 @@ The `*` indicates the branch that we are on.
 
 ### Creating Branches
 
-We can create a new branch using the following syntax.
+We can create a new branch using the following syntax:
 
 ```Bash
 git branch branch_name
 ```
 
-We can also switch branches using either of the following syntaxes (the latter was introduced in Git 2.23, Q3 2019, to avoid confusion).
+We can also switch branches using either of the following syntaxes (the latter was introduced in Git 2.23, Q3 2019, to avoid confusion):
 
 ```Bash
 git checkout branch_name
@@ -184,7 +184,7 @@ Merging branches generally falls into two scenarios, depending on if the `master
 
 Suppose that we've created a new branch called `new_branch`, have made changes to it, and want to merge it with the `master` branch. In this case, the `master` branch is called the *receiver* branch, and the `new_branch` branch is called the *giver* branch.
 
-If the `master` branch has not been altered, then we can merge the `new_branch` branch easily. First, we should ensure that we are on the `master` branch - in general, we should be on the branch that we wish to merge other branches with. Then we can use the following syntax.
+If the `master` branch has not been altered, then we can merge the `new_branch` branch easily. First, we should ensure that we are on the `master` branch - in general, we should be on the branch that we wish to merge other branches with. Then we can use the following syntax:
 
 ```Bash
 git merge new_branch
@@ -197,7 +197,7 @@ If the `master` branch has been altered however, then Git may not know which cha
 In this scenario, Git will leave conflict markers in the conflicting file(s) to be resolved by hand in the working directory. For any given conflicting file, the conflicting line(s) present in the `master` branch will be between the lines beginning `<<<<<<<` and `======`. The line(s) present in the `new_branch` branch will be between the lines beginning `======` and `>>>>>>>`. Once the conflicts have been resolved, we can use `git add` and `git commit` as usual on the conflicting file(s).
 
 ### Deleting Branches
-Once branches have been merged with the `master` branch, they are typically no longer needed. The following syntax can be used to delete such branches.
+Once branches have been merged with the `master` branch, they are typically no longer needed. The following syntax can be used to delete such branches:
 
 ```Bash
 git branch -d branch_name
@@ -218,7 +218,7 @@ Before we can begin, we need to create a local copy of the remote.
 git clone remote_location clone_name
 ```
 
-After the remote has been cloned, Git gives the remote address the name origin for convenience, although this can be changed. The following command can be used to see a list of a Git project's remotes.
+After the remote has been cloned, Git gives the remote address the name origin for convenience, although this can be changed. The following command can be used to see a list of a Git project's remotes:
 
 ```Bash
 git remote -v
