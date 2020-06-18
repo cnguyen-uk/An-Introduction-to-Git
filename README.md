@@ -36,7 +36,7 @@ The general Git workflow is as follows:
 
 ## Getting Started
 
-Once we have navigated to where we wish to work (using the commmand line), we need to initialise an empty Git repository in the current directory.
+Once we have navigated to where we wish to work (using the command line), we need to initialise an empty Git repository in the current directory.
 
 ```Bash
 git init
