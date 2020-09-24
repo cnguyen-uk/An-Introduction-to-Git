@@ -24,7 +24,7 @@ Throughout, note that file or directory arguments for commands can also be repla
   * [Deleting Branches](#deleting-branches)
 - [Collaborative Development with Git](#collaborative-development-with-git)
   * [Basic Collaborative Git Workflow](#basic-collaborative-git-workflow)
-  * [`fetch` and `push`](#fetch-and-push)
+  * [The `fetch` and `push` Commands](#the-fetch-and-push-commands)
 
 ## Basic Git Workflow
 
@@ -236,7 +236,7 @@ The typical collaborative Git workflow is as follows:
 
 Note that steps 1 and 4 safeguard against merge conflicts.
 
-### `fetch` and `push`
+### The `fetch` and `push` Commands
 
 Any time which elapses from the initial cloning period introduces the possibility of changes being introduced to the remote. Instead of cloning the repository again, we can instead bring those changes onto a local *remote branch*.
 
