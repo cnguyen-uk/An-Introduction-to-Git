@@ -1,7 +1,7 @@
 # An Introduction to Git
 *A compact introduction to using Git.*
 
-Git is a software that allows for distributed version control, whilst GitHub is a cloud-based platform built around Git. Although understanding how to use Git is not required to use GitHub, one of the most popular uses of GitHub is as a remote backup repository for local Git repositories.
+Git is a software that allows for distributed version control, whilst GitHub is a cloud-based platform built around Git. Understanding how to use Git is not required to use GitHub, but one of the most popular uses of GitHub is as a remote backup repository for local Git repositories.
 
 Although there are no programming prerequisites required to use Git, the typical Git user will be using it alongside programming projects. In any case, it can be useful to know some file system navigation and file system manipulation [Bash commands](https://github.com/cnguyen-uk/An-Introduction-to-Bash).
 
