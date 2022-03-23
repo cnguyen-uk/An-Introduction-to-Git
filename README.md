@@ -197,7 +197,7 @@ If the `master` branch has been altered however, then Git may not know which cha
 In this scenario, Git will leave conflict markers in the conflicting file(s) to be resolved by hand in the working directory. For any given conflicting file, the conflicting line(s) present in the `master` branch will be between the lines beginning `<<<<<<<` and `======`. The line(s) present in the `new_branch` branch will be between the lines beginning `======` and `>>>>>>>`. Once the conflicts have been resolved, we can use `git add` and `git commit` as usual on the conflicting file(s).
 
 ### Deleting Branches
-Once branches have been merged with the `master` branch, they are typically no longer needed. The following syntax can be used to delete such branches:
+Once branches have been merged with the `master` branch, they are typically no longer needed, and it's good practice to clean them up. The following syntax can be used to delete such branches:
 
 ```Bash
 git branch -d branch_name
