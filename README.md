@@ -5,7 +5,7 @@ Git is a software that allows for distributed version control, whilst GitHub is 
 
 Although there are no programming prerequisites required to use Git, the typical Git user will be using it alongside programming projects. In any case, it can be useful to know some file system navigation and file system manipulation [Bash commands](https://github.com/cnguyen-uk/An-Introduction-to-Bash).
 
-Throughout, note that file or directory arguments for commands can also be replaced with absolute or relative paths instead. Note also that may run commands on multiple filenames in a single line, or on all files by using `.` in the place of a filename.
+Throughout, note that file or directory arguments for commands can also be replaced with absolute or relative paths instead. Note also that you may run commands on multiple filenames in a single line, or on all files by using `.` in the place of a filename.
 
 ## Table of Contents
 
